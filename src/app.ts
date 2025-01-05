@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors())
 
 //application route
-app.use("/api/v1/products", ProductRoutes);
+app.use("/", ProductRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send("It's L2B4A2!")
