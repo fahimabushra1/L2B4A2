@@ -15,6 +15,7 @@ const productSchema = new Schema<Product>({
         description: {type: String, required: [true, "description must be needed"]},
         quantity: {type: Number, required: [true, "quantity must be needed"], min: 0 },
         inStock: { type: Boolean, default: true },
+        isDeleted: { type: Boolean, default: false },
       },
         {timestamps: true},
 );
