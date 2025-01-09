@@ -15,20 +15,20 @@ const getSingleProductFromDB = async(id: string) =>{
     return result;
 };
 
-const updateProductFromDB = async(id: string)=>{
-const result = await productModel.updateOne({id});
+const updateProductFromDB = async(id: string, updateData: Partial<Product>)=>{
+const result = await productModel.findOneAndUpdate({id: id}, updateData,{new: true});
 return result;
 };
 
-const deleteProductFromDB = async(id: string)=>{
-    const result = await productModel.deleteOne({id});
-    return result;
-}
+// const deleteProductFromDB = async(id: string)=>{
+//     const result = await productModel.deleteOne({id});
+//     return result;
+// }
 
 export const ProductServices = {
     createProductIntoDB,
     getAllProductFromDB,
     getSingleProductFromDB,
     updateProductFromDB,
-    deleteProductFromDB,
+    // deleteProductFromDB,
 };
