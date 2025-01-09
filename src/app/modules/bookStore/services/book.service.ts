@@ -16,7 +16,7 @@ const getSingleProductFromDB = async(id: string) =>{
 };
 
 const updateProductFromDB = async(id: string, updateData:Partial<Product>)=>{
-const result = await productModel.findOneAndUpdate({id}, { $set: updateData},{new: true});
+const result = await productModel.findOneAndUpdate({id},updateData,{new: true});
 console.log(result)
 return result;
 };

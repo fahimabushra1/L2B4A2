@@ -15,7 +15,7 @@ const createProduct= async (req: Request, res: Response)=>{
     }catch(err){
       res.status(500).json({
         success: false,
-        message:"something went wrong",
+        message:"err.message || something went wrong",
         error: err,
     });
     }
@@ -41,6 +41,7 @@ const createProduct= async (req: Request, res: Response)=>{
       const getSingleProduct = async(req: Request, res: Response) =>{
         try{
           const {productId} = req.params;
+          console.log({productId})
           const result = await ProductServices.getSingleProductFromDB(productId);
       
           res.status(200).json({
@@ -52,7 +53,7 @@ const createProduct= async (req: Request, res: Response)=>{
           console.log(err);
           res.status(500).json({
             success: false,
-            message:"something went wrong",
+            message:"err.message || something went wrong",
             error: err,
         });
       }};
@@ -61,7 +62,7 @@ const createProduct= async (req: Request, res: Response)=>{
 const updateProduct = async(req: Request, res: Response) =>{
   try{
     const {productId} = req.params;
-    // console.log({productId})
+    console.log({productId})
     const updatedProduct = req.body;
     console.log(updatedProduct)
     const result = await ProductServices.updateProductFromDB(productId, updatedProduct);
@@ -76,7 +77,7 @@ const updateProduct = async(req: Request, res: Response) =>{
     console.log(err);
     res.status(500).json({
       success: false,
-      message:"something went wrong",
+      message:"err.message || something went wrong",
       error: err,
   });
 }};
@@ -95,7 +96,7 @@ const deleteProduct = async(req: Request, res: Response) =>{
     console.log(err);
     res.status(500).json({
       success: false,
-      message:"something went wrong",
+      message:"err.message || something went wrong",
       error: err,
   });
 }};
