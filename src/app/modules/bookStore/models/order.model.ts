@@ -17,15 +17,24 @@ const orderSchema = new Schema<Order>({
 orderSchema.pre("save", async function(next){
     try{
         console.log("Product ID in order:", this.product);
-        const testProduct = await productModel.findById();
+        const testProduct = await productModel.findById(this.product);
         console.log("Test Product:", testProduct);
-        // if (product.quantity < this.quantity) {
-        //     throw new Error("Not enough product stock available");
-        //   }
+        if (!testProduct) {
+            throw new Error("Product not found");
+          }
+          if (testProduct.quantity < this.quantity) {
+            throw new Error("Not enough product stock available");
+          }else{
+           testProduct.quantity -= this.quantity;
+          };
+          if (testProduct.quantity === 0) {
+            testProduct.inStock = false;
+          };
+          await testProduct.save();
         next()
-    }catch(err){
-
-    }
+    }catch (err:any) {
+        next(err);
+      }
 });
 
 export const orderModel = model<Order>('order', orderSchema);
