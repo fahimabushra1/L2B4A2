@@ -17,7 +17,7 @@ const getSingleProductFromDB = async(id: string) =>{
 
 const updateProductFromDB = async(id: string, updateData:Partial<Product>)=>{
 const result = await productModel.findOneAndUpdate({id},updateData,{new: true});
-console.log(result)
+// console.log(result)
 return result;
 };
 

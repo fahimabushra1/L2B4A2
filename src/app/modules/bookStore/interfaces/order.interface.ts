@@ -5,4 +5,4 @@ export type Order = {
     product: ObjectId;
     quantity: number;
     totalPrice: number;
-}
+};

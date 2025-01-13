@@ -16,7 +16,7 @@ const createProduct= async (req: Request, res: Response)=>{
         message:"product is created successfully",
         data: result,
     });
-    }catch(err){
+    }catch(err:any){
       res.status(500).json({
         success: false,
         message:"err.message || something went wrong",
@@ -25,7 +25,7 @@ const createProduct= async (req: Request, res: Response)=>{
     }
     };
 
-    const getAllProducts = async(req: Request, res: Response) =>{
+const getAllProducts = async(req: Request, res: Response) =>{
         try{
           const result = await ProductServices.getAllProductFromDB();
       
@@ -34,7 +34,7 @@ const createProduct= async (req: Request, res: Response)=>{
               message:"products are retrieved successfully",
               data: result,
           });
-        }catch(err){
+        }catch(err:any){
           res.status(500).json({
             success: false,
             message:"something went wrong",
@@ -42,7 +42,7 @@ const createProduct= async (req: Request, res: Response)=>{
         });
         }
       }
-      const getSingleProduct = async(req: Request, res: Response) =>{
+const getSingleProduct = async(req: Request, res: Response) =>{
         try{
           const {productId} = req.params;
           console.log({productId})
@@ -53,7 +53,7 @@ const createProduct= async (req: Request, res: Response)=>{
               message:"product is retrieved successfully",
               data: result,
           });
-        }catch(err){
+        }catch(err:any){
           console.log(err);
           res.status(500).json({
             success: false,
@@ -66,18 +66,18 @@ const createProduct= async (req: Request, res: Response)=>{
 const updateProduct = async(req: Request, res: Response) =>{
   try{
     const {productId} = req.params;
-    console.log({productId})
+    // console.log({productId})
     const updatedProduct = req.body;
-    console.log(updatedProduct)
+    // console.log(updatedProduct)
     const result = await ProductServices.updateProductFromDB(productId, updatedProduct);
-    console.log(result)
+    // console.log(result)
 
     res.status(200).json({
       success: true,
       message:"product is updated successfully",
       data: result,
     });
-  }catch(err){
+  }catch(err:any){
     console.log(err);
     res.status(500).json({
       success: false,
@@ -96,7 +96,7 @@ const deleteProduct = async(req: Request, res: Response) =>{
         message:"product is deleted successfully",
         data: result,
     });
-  }catch(err){
+  }catch(err:any){
     console.log(err);
     res.status(500).json({
       success: false,
