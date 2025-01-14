@@ -22,6 +22,7 @@ const createProduct= async (req: Request, res: Response)=>{
         message:"err.message || something went wrong",
         error: err,
     });
+    res.status(400).json({ message: "No product found", success: false, err });
     }
     };
 
@@ -40,6 +41,7 @@ const getAllProducts = async(req: Request, res: Response) =>{
             message:"something went wrong",
             error: err,
         });
+        res.status(400).json({ message: "Fail to retrieve products", success: false, err });
         }
       }
 const getSingleProduct = async(req: Request, res: Response) =>{
@@ -60,6 +62,7 @@ const getSingleProduct = async(req: Request, res: Response) =>{
             message:"err.message || something went wrong",
             error: err,
         });
+        res.status(400).json({ message: "Fail to retrieve single product", success: false, err });
       }};
       
 
@@ -84,6 +87,7 @@ const updateProduct = async(req: Request, res: Response) =>{
       message:"err.message || something went wrong",
       error: err,
   });
+  res.status(400).json({ message: "Fail to update product", success: false, err });
 }};
 
 const deleteProduct = async(req: Request, res: Response) =>{
@@ -103,6 +107,7 @@ const deleteProduct = async(req: Request, res: Response) =>{
       message:"err.message || something went wrong",
       error: err,
   });
+  res.status(400).json({ message: "Product can not be deleted", success: false, err });
 }};
  
 
