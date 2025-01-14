@@ -1,11 +1,9 @@
-```markdown
 # 🛒 Book Store Orders Management System
 
 ## 🚀 Project Overview
 
 This assignment is an **Book Store Orders Management System** built to manage orders, calculate revenue, and handle product inventory. It includes features like placing orders, calculating total revenue, and ensuring stock availability. The project is developed using **Node.js**, **TypeScript**, **Mongoose**, and **MongoDB**.
 
----
 
 ## ✨ Features
 
@@ -17,7 +15,6 @@ This assignment is an **Book Store Orders Management System** built to manage or
 - **Validation**: Implements strict input validation using Zod and MongoDB ObjectId compatibility.
 - **Database**: Fully integrated with MongoDB, using Mongoose for schema definitions and pre-middleware hooks.
 
----
 
 ## 🛠️ Tech Stack
 
@@ -26,11 +23,10 @@ This assignment is an **Book Store Orders Management System** built to manage or
 - **ORM**: Mongoose
 - **Validation**: Zod
 
----
 
 ## 📂 Project Structure
 
-```
+
 src/
 ├── controllers/    # API endpoint logic
 ├── interfaces/     # TypeScript interfaces for data types
@@ -39,9 +35,7 @@ src/
 ├── services/       # Business logic and database interaction
 ├── utils/          # Utility functions and constants
 └── app.ts          # Application entry point
-```
 
----
 
 ## ⚙️ Setup Instructions
 
@@ -51,7 +45,6 @@ Ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (v16 or above)
 - [MongoDB](https://www.mongodb.com/) (Running locally or via a cloud provider like MongoDB Atlas)
 
----
 
 ### 🔧 Steps to Set Up Locally
 
@@ -79,7 +72,6 @@ Ensure you have the following installed:
    ```
    The server will run at [http://localhost:5000](http://localhost:5000).
 
----
 
 ## 🚨 API Endpoints
 
@@ -118,7 +110,6 @@ Ensure you have the following installed:
      }
      ```
 
----
 
 ## 🧪 Testing
 
@@ -127,26 +118,21 @@ Run tests to ensure everything is working as expected:
 npm run test
 ```
 
----
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
 
----
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
 
----
 
 ## 💡 Author
 
 Developed by **[Fahima Bushra]**  
 For queries, reach out at: [bushra.arifeen@gmail.com](mailto:bushra.arifeen@gmail.com)
 
----
-```
 
 Replace placeholders like `https://github.com/fahimabushra1/L2B4A2.git` and `bushra.arifeen@gmail.com` with the actual details specific to your project. Let me know if you'd like additional modifications!
