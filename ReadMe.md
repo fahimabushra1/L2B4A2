@@ -28,12 +28,19 @@ This assignment is an **Book Store Orders Management System** built to manage or
 
 
 src/
+
 ├── controllers/    # API endpoint logic
+
 ├── interfaces/     # TypeScript interfaces for data types
+
 ├── models/         # Mongoose models for database
+
 ├── routes/         # Route definitions for the API
+
 ├── services/       # Business logic and database interaction
+
 ├── utils/          # Utility functions and constants
+
 └── app.ts          # Application entry point
 
 
@@ -60,6 +67,7 @@ Ensure you have the following installed:
    ```
 
 3. **Environment Variables**
+
   -To run this project, you will need to add the following environment variables to your .env file
    ```env
    PORT
